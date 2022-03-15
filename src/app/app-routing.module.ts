@@ -4,7 +4,7 @@ import { sectionsMetadata } from './constant/app.constant';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     data: sectionsMetadata.homePage,
     children: [
       {
@@ -13,6 +13,9 @@ const routes: Routes = [
         loadChildren: () => import('./pages/articles/articles.module').then(m => m.ArticlesModule),
       },
     ]
+  },
+  {
+    path: '', redirectTo: 'home/articles', pathMatch: 'full'
   }
 ];
 
